@@ -146,6 +146,7 @@ void init_per_par_inedges(int nth_par){
 
 void init_global(string _fpath){
     gp = new GraphProperty(_fpath);
+	if (gp->shuffle_size != 0) do_random_shuffle = true;
     //vertices = new adjlst_inmem<edge_t, vertex_val_t>[gp->vertices_num];
     vertices = (adjlst_inmem<edge_t, vertex_val_t> *) malloc (
                 sizeof(adjlst_inmem<edge_t, vertex_val_t>) *
